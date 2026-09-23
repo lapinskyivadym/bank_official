@@ -1,0 +1,124 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Відкриття рахунку" id="process_finkit_account">
+    <mxGraphModel dx="1664" dy="874" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pool_client" parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=25;horizontal=1;horizontalFlip=0;fillColor=#f8f9fa;strokeColor=#333333;fontColor=#000000;fontStyle=1;align=left;spacingLeft=10;" value="Пул: Клієнт" vertex="1">
+          <mxGeometry height="170" width="1580" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_client" parent="pool_client" style="swimlane;html=1;startSize=0;fillColor=none;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="145" width="1580" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="c_start" parent="lane_client" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontColor=#000000;" value="Клієнт обрав&#xa;«відкрити&#xa;рахунок»" vertex="1">
+          <mxGeometry height="70" width="70" x="40" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c_task1" parent="lane_client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=20;fontSize=12;fontColor=#000000;" value="Обрати тип рахунку&#xa;та рахунок внеску" vertex="1">
+          <mxGeometry height="60" width="150" x="170" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c_data" parent="lane_client" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;size=0;fontSize=11;fontColor=#000000;" value="Заявка" vertex="1">
+          <mxGeometry height="60" width="50" x="360" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="c_catch_msg" parent="lane_client" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontColor=#000000;" value="Отримати&#xa;повідомлення&#xa;і номер" vertex="1">
+          <mxGeometry height="70" width="70" x="1145" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c_end" parent="lane_client" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;fontColor=#000000;" value="Рахунок&#xa;відкрито&#xa;(клієнт)" vertex="1">
+          <mxGeometry height="70" width="70" x="1330" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c_flow_1" edge="1" parent="lane_client" source="c_start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;" target="c_task1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_assoc" edge="1" parent="lane_client" source="c_task1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=none;strokeColor=#666666;" target="c_data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_flow_2" edge="1" parent="lane_client" source="c_task1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;" target="c_catch_msg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_flow_3" edge="1" parent="lane_client" source="c_catch_msg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;" target="c_end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pool_bank" parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=25;horizontal=1;horizontalFlip=0;fillColor=#f8f9fa;strokeColor=#333333;fontColor=#000000;fontStyle=1;align=left;spacingLeft=10;" value="Пул: Банк «ФінКит»" vertex="1">
+          <mxGeometry height="380" width="1580" x="40" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_sys" parent="pool_bank" style="swimlane;html=1;startSize=20;horizontal=1;fillColor=none;strokeColor=#666666;fontColor=#333333;align=left;spacingLeft=10;fontStyle=2;" value="Доріжка: Система" vertex="1">
+          <mxGeometry height="190" width="1580" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="s_xor_id" parent="lane_sys" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;fontColor=#000000;" value="Клієнт&#xa;ідентифі-&#xa;кований?" vertex="1">
+          <mxGeometry height="90" width="100" x="195" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s_xor_sync" parent="lane_sys" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="" vertex="1">
+          <mxGeometry height="50" width="50" x="390" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s_task_check" parent="lane_sys" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=20;fontSize=12;fontColor=#000000;" value="Перевірити достатність&#xa;коштів на рахунку" vertex="1">
+          <mxGeometry height="60" width="160" x="500" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="s_xor_money" parent="lane_sys" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;fontColor=#000000;" value="Коштів&#xa;достатньо?" vertex="1">
+          <mxGeometry height="90" width="100" x="720" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s_end_nomoney" parent="lane_sys" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;fontColor=#000000;" value="Недостатньо&#xa;коштів" vertex="1">
+          <mxGeometry height="70" width="70" x="735" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="s_task_create" parent="lane_sys" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=20;fontSize=12;fontColor=#000000;" value="Створити рахунок і&#xa;перенести внесок" vertex="1">
+          <mxGeometry height="60" width="160" x="880" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="s_task_show" parent="lane_sys" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=20;fontSize=12;fontColor=#000000;" value="Показати номер&#xa;рахунку та надіслати&#xa;повідомлення" vertex="1">
+          <mxGeometry height="60" width="160" x="1100" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="s_end_success" parent="lane_sys" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;fontColor=#000000;" value="Рахунок&#xa;відкрито" vertex="1">
+          <mxGeometry height="70" width="70" x="1330" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="sf_0" edge="1" parent="lane_sys" source="s_xor_id" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;labelBackgroundColor=#ffffff;fontColor=#000000;" target="s_xor_sync" value="так">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf_1" edge="1" parent="lane_sys" source="s_xor_sync" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;" target="s_task_check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf_2" edge="1" parent="lane_sys" source="s_task_check" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;" target="s_xor_money">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf_3" edge="1" parent="lane_sys" source="s_xor_money" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;labelBackgroundColor=#ffffff;fontColor=#000000;" target="s_end_nomoney" value="ні">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf_4" edge="1" parent="lane_sys" source="s_xor_money" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;labelBackgroundColor=#ffffff;fontColor=#000000;" target="s_task_create" value="так">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf_5" edge="1" parent="lane_sys" source="s_task_create" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;" target="s_task_show">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf_6" edge="1" parent="lane_sys" source="s_task_show" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;" target="s_end_success">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_op" parent="pool_bank" style="swimlane;html=1;startSize=20;horizontal=1;fillColor=none;strokeColor=#666666;fontColor=#333333;align=left;spacingLeft=10;fontStyle=2;" value="Доріжка: Операціоніст" vertex="1">
+          <mxGeometry height="165" width="1580" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="op_task_docs" parent="lane_op" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;arcSize=20;fontSize=12;fontColor=#000000;" value="Перевірити документи&#xa;нового клієнта" vertex="1">
+          <mxGeometry height="60" width="150" x="170" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="op_xor_docs" parent="lane_op" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;fontColor=#000000;" value="Документи&#xa;коректні?" vertex="1">
+          <mxGeometry height="90" width="100" x="380" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="op_end_reject" parent="lane_op" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;fontColor=#000000;" value="Відмовлено&#xa;(документи)" vertex="1">
+          <mxGeometry height="70" width="70" x="540" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="opf_1" edge="1" parent="lane_op" source="op_task_docs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;" target="op_xor_docs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="opf_2" edge="1" parent="lane_op" source="op_xor_docs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;labelBackgroundColor=#ffffff;fontColor=#000000;" target="op_end_reject" value="ні">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cross_1" edge="1" parent="pool_bank" source="s_xor_id" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;labelBackgroundColor=#ffffff;fontColor=#000000;" target="op_task_docs" value="ні">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cross_2" edge="1" parent="pool_bank" source="op_xor_docs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;strokeColor=#000000;labelBackgroundColor=#ffffff;fontColor=#000000;" target="s_xor_sync" value="так">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="msg_1" edge="1" parent="1" source="c_task1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=classic;strokeColor=#000000;labelBackgroundColor=#ffffff;fontColor=#000000;fontSize=11;" target="s_xor_id" value="запит на відкриття">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="msg_2" edge="1" parent="1" source="s_task_show" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=classic;strokeColor=#000000;labelBackgroundColor=#ffffff;fontColor=#000000;fontSize=11;" target="c_catch_msg" value="повідомлення клієнту">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
