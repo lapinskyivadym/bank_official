@@ -106,6 +106,6 @@ PostgreSQL, інтеграція з процесинговим центром б
 6. Клієнт бачить статус заявки у кабінеті й отримує повідомлення про його зміну.
    
 ## 5) Посилання
-1. «Відкриття рахунку» — [PNG](bpmn-model/01_account.png) | [DRAWIO](bpmn-model/01_account.drawio)
-2. «Переказ коштів» — [PNG](bpmn-model/02_transfer.png) | [DRAWIO](bpmn-model/02_transfer.drawio)
-3. «Оформлення кредиту» — [PNG](bpmn-model/03_credit.png) | [DRAWIO](bpmn-model/03_credit.drawio)
+1. «Відкриття рахунку» — [PNG](bpmn/01_account.drawio.png) | [DRAWIO](bpmn/01_account.drawio)
+2. «Переказ коштів» — [PNG](bpmn/02_transfer.drawio.png) | [DRAWIO](bpmn/02_transfer.drawio)
+3. «Оформлення кредиту» — [PNG](bpmn/03_credit.drawio.png) | [DRAWIO](bpmn/03_credit.drawio)
