@@ -43,7 +43,7 @@
 
 1. Відкрийте онлайн-редактор [app.diagrams.net](https://app.diagrams.net/) у браузері.
 2. У верхньому меню оберіть **File** → **Open from** → **Device** (або на початковому екрані натисніть **Open Existing Diagram**).
-3. Виберіть потрібний файл `.drawio` з папки `sprint1/bpmn-model/`.
+3. Виберіть потрібний файл `.drawio` з папки `docs/sprint1/bpmn/`.
 4. Щоб схема повністю вписалася в робочу область, натисніть `Ctrl + Shift + H` (або **View** → **Reset View**).
 
 ---
