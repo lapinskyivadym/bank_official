@@ -4,7 +4,7 @@
 
 | ПІБ | GitHub | Роль С4 | Мої юніт-тести (клас) | Перший коміт (дата) |
 |-----|--------|---------|------------------------|---------------------|
-| … | @… | Керівник тестування | AccountLedgerTest | |
-| … | @… | Тест-аналітик | LoanCalculatorTest | |
-| … | @… | Інженер з тестування | TransferValidatorTest (BL-40) | |
-| … | @… | Скрам-майстер / рецензент | TransferValidatorTest (BL-50) | |
+| Фризюк Денис | @someoq | Керівник тестування | AccountLedgerTest | 17.11.2026 | 
+| Обозюк Олександр | @oboziuk | Тест-аналітик | LoanCalculatorTest | |
+| Мельниченко Артемій | @ykotoroya-fb41 | Інженер з тестування | TransferValidatorTest (BL-40) | |
+| Лапінський Вадим | @lapinskyivadym | Скрам-майстер / рецензент | TransferValidatorTest (BL-50) | |
