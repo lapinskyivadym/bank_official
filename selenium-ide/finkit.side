@@ -1,0 +1,270 @@
+{
+  "id": "ac6ca4fe-9d9b-4748-8249-65dc33a71508",
+  "version": "2.0",
+  "name": "FinKit",
+  "url": "https://parabank.parasoft.com",
+  "tests": [
+    {
+      "id": "69df734e-db6b-44cc-8790-7c70382a36a8",
+      "name": "TC005_Login",
+      "commands": [
+        {
+          "id": "d205e79a-6498-4831-89dc-3516d47a9a51",
+          "comment": "",
+          "command": "open",
+          "target": "/parabank/register.htm",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e6fb205b-9fd5-4645-8284-198499dd8127",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1280x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "af1ffdfe-0621-4e10-90b2-04aca80c38cb",
+          "comment": "",
+          "command": "executeScript",
+          "target": "return 'fk_s4_' + Date.now();",
+          "targets": [],
+          "value": "login"
+        },
+        {
+          "id": "c73341ef-2667-4b07-a910-23b2c9eb1539",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=customer.firstName",
+          "targets": [],
+          "value": "20000"
+        },
+        {
+          "id": "9f5fa624-517b-48b1-948a-03f6cc4ef7e0",
+          "comment": "",
+          "command": "type",
+          "target": "id=customer.firstName",
+          "targets": [],
+          "value": "Test"
+        },
+        {
+          "id": "35577a4c-e715-419e-b89e-5eb87f437f27",
+          "comment": "",
+          "command": "type",
+          "target": "id=customer.lastName",
+          "targets": [],
+          "value": "Client"
+        },
+        {
+          "id": "0e2b0754-3535-41f0-a9d8-3341d2618ea3",
+          "comment": "",
+          "command": "type",
+          "target": "id=customer.address.street",
+          "targets": [],
+          "value": "QA Street 10"
+        },
+        {
+          "id": "74c4c950-cec0-43c8-ab18-d63a3c649fdf",
+          "comment": "",
+          "command": "type",
+          "target": "id=customer.address.city",
+          "targets": [],
+          "value": "Testville"
+        },
+        {
+          "id": "9e02e012-e1a6-4953-8cdd-fd468eabdaef",
+          "comment": "",
+          "command": "type",
+          "target": "id=customer.address.state",
+          "targets": [],
+          "value": "Teststate"
+        },
+        {
+          "id": "e08d278d-8ce4-405f-a719-a77625acdc86",
+          "comment": "",
+          "command": "type",
+          "target": "id=customer.address.zipCode",
+          "targets": [],
+          "value": "01001"
+        },
+        {
+          "id": "be256286-cf61-4bfd-adfe-e54116e19483",
+          "comment": "",
+          "command": "type",
+          "target": "id=customer.phoneNumber",
+          "targets": [],
+          "value": "5550100001"
+        },
+        {
+          "id": "f28dc92b-554d-4d12-97e9-91b80b5e417b",
+          "comment": "",
+          "command": "type",
+          "target": "id=customer.ssn",
+          "targets": [],
+          "value": "999000001"
+        },
+        {
+          "id": "042ba36f-d6e7-47a3-9f20-da66c41db1bf",
+          "comment": "",
+          "command": "type",
+          "target": "id=customer.username",
+          "targets": [],
+          "value": "${login}"
+        },
+        {
+          "id": "6e48e779-2ccb-4225-9ac3-c1d7d55e3311",
+          "comment": "",
+          "command": "type",
+          "target": "id=customer.password",
+          "targets": [],
+          "value": "Test2026!"
+        },
+        {
+          "id": "76c36ea8-6462-421d-b8c3-0b04f98b3fdd",
+          "comment": "",
+          "command": "type",
+          "target": "id=repeatedPassword",
+          "targets": [],
+          "value": "Test2026!"
+        },
+        {
+          "id": "bddd4e64-c112-4fa8-b9f7-dfd9436572f0",
+          "comment": "",
+          "command": "click",
+          "target": "css=#customerForm input[type=submit]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "770e4931-2727-4ae3-9034-8ca6f1131a25",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "linkText=Log Out",
+          "targets": [],
+          "value": "20000"
+        },
+        {
+          "id": "3d9efd4a-e2d8-433d-b18d-3976bfface12",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#rightPanel h1",
+          "targets": [],
+          "value": "Welcome ${login}"
+        },
+        {
+          "id": "c66a4b2d-a97c-47ab-8939-73ca33386ddc",
+          "comment": "",
+          "command": "click",
+          "target": "linkText=Log Out",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e0f100ec-a574-4e1a-a5fd-88c7b93f461f",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "name=username",
+          "targets": [],
+          "value": "20000"
+        },
+        {
+          "id": "bbf79951-d708-449b-a39c-167ab0e98e06",
+          "comment": "",
+          "command": "type",
+          "target": "name=username",
+          "targets": [],
+          "value": "${login}"
+        },
+        {
+          "id": "a96044d6-ee5b-41d3-8022-ee0f6f2697a0",
+          "comment": "",
+          "command": "type",
+          "target": "name=password",
+          "targets": [],
+          "value": "Test2026!"
+        },
+        {
+          "id": "9d7ee91d-b735-4c19-ab71-e3ccbd484d84",
+          "comment": "",
+          "command": "click",
+          "target": "css=#loginPanel input[type=submit]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "d329174c-a011-4781-bd1d-dea034af1c6b",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "linkText=Accounts Overview",
+          "targets": [],
+          "value": "20000"
+        },
+        {
+          "id": "b2cabb59-5dae-4657-9330-b639fd41536f",
+          "comment": "",
+          "command": "click",
+          "target": "linkText=Accounts Overview",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "498e0f71-f230-4e81-9fdc-ddc75c07b092",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=#accountTable tbody a",
+          "targets": [],
+          "value": "20000"
+        },
+        {
+          "id": "b97f2c60-896f-4cd2-afa3-66bc7a80cefb",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=#rightPanel h1",
+          "targets": [],
+          "value": "Accounts Overview"
+        },
+        {
+          "id": "c5df08b9-ca15-414a-b2d9-84c988fe42e7",
+          "comment": "",
+          "command": "click",
+          "target": "linkText=Log Out",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "bb72799a-f40c-4856-8030-fb6e19e7f2e3",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "name=username",
+          "targets": [],
+          "value": "20000"
+        },
+        {
+          "id": "094053a5-88d3-4c40-9df7-02c5ce08e996",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "name=password",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "482d1133-b899-4caa-85ca-5b6a9897d535",
+      "name": "FinKit",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "69df734e-db6b-44cc-8790-7c70382a36a8"
+      ]
+    }
+  ],
+  "urls": [
+    "https://parabank.parasoft.com/"
+  ],
+  "plugins": []
+}
