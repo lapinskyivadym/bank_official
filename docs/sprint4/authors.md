@@ -6,5 +6,5 @@
 |-----|--------|---------|------------------------|---------------------|
 | Фризюк Денис | @someoq | Керівник тестування | AccountLedgerTest | 17.11.2026 | 
 | Обозюк Олександр | @oboziuk | Тест-аналітик | LoanCalculatorTest | |
-| Мельниченко Артемій | @ykotoroya-fb41 | Інженер з тестування | TransferValidatorTest (BL-40) | |
+| Мельниченко Артемій | @ykotoroya-fb41 | Інженер з тестування | TransferValidatorTest (BL-40) |24.11.2026|
 | Лапінський Вадим | @lapinskyivadym | Скрам-майстер / рецензент | TransferValidatorTest (BL-50) | |
