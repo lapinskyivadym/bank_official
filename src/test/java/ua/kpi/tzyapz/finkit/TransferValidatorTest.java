@@ -25,6 +25,7 @@ class TransferValidatorTest {
         var errors = validate(TO, amount, "1000", "0");
         assertEquals(allowed ? List.of() : List.of(TransferError.INSUFFICIENT_FUNDS), errors);
     }
+    //BUG-013 - модуль відхиляє переказ при досягненні денного ліміту рівно 50000 грн.
     @ParameterizedTest(name = "Вже переказано {0} грн, новий переказ {1} грн, дозволено = {2}")
     @CsvSource({"0, 49999.99, true", "0, 50000.00, true", "0, 50000.01, false",
                 "30000, 19999.99, true", "30000, 20000.00, true", "30000, 20000.01, false"})
