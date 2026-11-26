@@ -12,7 +12,7 @@
 | BL | Правило | Метод | Планований тест | Дані / межі | Тип | Автор | Рецензент | Статус |
 |---|---|---|---|---|---|---|---|---|
 | BL-10 | A = P·i/(1−(1+i)^−n), i = r/12/100, округлення HALF_UP до копійок | `monthlyPayment` | `monthlyPaymentMatchesFormula` (параметризований) | 100000/12 %/12 → 8884.88; 🔴 100000/7 %/12 → 8652.67; 50000/15 %/24 → 2424.33; 1000000/40 %/60 → 38751.64 | норм. | | | |
-| BL-20 | переплата = A·n − P | `totalInterest` | `totalInterestEqualsPaymentTimesMonthsMinusPrincipal` | 100000/12 %/12 → 6618.56 (з округленим A) або 6618.55 (без) — **звірити з SRS** | норм. | | | |
+| BL-20 | переплата = A·n − P | `totalInterest` | `totalInterestEqualsPaymentTimesMonthsMinusPrincipal` | 100000/12 %/12 → 6618.56 (з округленим A) | норм. | @oboziuk | | |
 | BL-30 | P ∈ [1000; 1 000 000] | `monthlyPayment` | `principalBoundaries` (параметризований) | 999.99 → IAE; 1000 ✔; 1000000 ✔; 1000000.01 → IAE | межі | | | |
 | BL-30 | n ∈ [3; 60] | `monthlyPayment` | `monthsBoundaries` (параметризований) | 2 → IAE; 🔴 3 ✔ (10000/12 %/3 → 3400.22); 60 ✔; 61 → IAE | межі | | | |
 | BL-30 | r ∈ [5; 40] % | `monthlyPayment` | `rateBoundaries` (параметризований) | 4.99 → IAE; 5 ✔; 40 ✔; 40.01 → IAE | межі | | | |
